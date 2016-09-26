@@ -27,15 +27,27 @@
     </style>
     <body>
         <div id = 'display'>
-            <button id = 'button'>Probably a button</button>
+            <button id = 'button'></button>
         </div>
         
         <script>
             var myBut = document.getElementById('button');
             var disp = document.getElementById('display');
+            var butWidth = 1;
+            var butHeight = 1;
+            var r = 0;
+            var g = 0;
+            var b = 0;
             
             myBut.onclick = function(){
-                disp.style.backgroundColor = "#AAA";
+                r = Math.round(Math.random()*255);
+                g = Math.round(Math.random()*255);
+                b = Math.round(Math.random()*255);
+                butWidth = Math.round(Math.random()*500);
+                butHeight = Math.round(Math.random()*500);
+                disp.style.backgroundColor = "rgb("+r+", "+g+", "+b+")";
+                myBut.style.width = butWidth+"px";
+                myBut.style.height = butHeight+"px";
             }
         </script>
     </body>
